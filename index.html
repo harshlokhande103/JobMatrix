@@ -88,6 +88,34 @@
             width: 100%;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: #00d9ff;
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -467,8 +495,42 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
             nav ul {
-                gap: 1rem;
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 70%;
+                height: calc(100vh - 70px);
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav ul a {
+                display: block;
+                padding: 1rem;
+                border-radius: 8px;
+                background: rgba(0, 217, 255, 0.1);
+                text-align: center;
+            }
+
+            nav ul a:hover {
+                background: rgba(0, 217, 255, 0.2);
             }
 
             .hero h2 {
@@ -501,10 +563,15 @@
                 <span class="logo-icon">🔷</span>
                 <h1>JobMatrix</h1>
             </div>
-            <ul>
-                <li><a href="#" onclick="showPage('home')">Home</a></li>
-                <li><a href="#" onclick="showPage('about')">About Us</a></li>
-                <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="#" onclick="showPage('home'); closeMenu()">Home</a></li>
+                <li><a href="#" onclick="showPage('about'); closeMenu()">About Us</a></li>
+                <li><a href="#" onclick="showPage('contact'); closeMenu()">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -664,6 +731,21 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+
         // Show popup after 2 seconds
         setTimeout(() => {
             const popup = document.getElementById('welcomePopup');
