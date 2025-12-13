@@ -73,6 +73,57 @@ Source: ${source || 'Not provided'}
   }
 });
 
+// POST /api/contact  -> contact page form
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { name, email, phone, message, source } = req.body || {};
+
+    if (!name || !email || !phone || !message) {
+      return res.status(400).json({ success: false, message: 'Missing required fields' });
+    }
+
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: `"JobMatrix Website" <${process.env.SMTP_USER}>`,
+      to: process.env.OWNER_EMAIL,
+      subject: 'New Contact Message - JobMatrix',
+      text: `
+New contact message from JobMatrix:
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Message: ${message}
+Source: ${source || 'Contact Form'}
+      `,
+      html: `
+        <h2>New Contact Message - JobMatrix</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong><br/>${(message || '').replace(/\n/g, '<br/>')}</p>
+        <p><strong>Source:</strong> ${source || 'Contact Form'}</p>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    return res.json({ success: true, message: 'Contact message emailed to owner' });
+  } catch (err) {
+    console.error('Error in /api/contact:', err);
+    return res.status(500).json({ success: false, message: 'Error sending email' });
+  }
+});
+
 // server start
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
