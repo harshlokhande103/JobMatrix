@@ -13,8 +13,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// optional: agar chaaho to current folder ko static serve kar sakte ho
-// app.use(express.static(__dirname));
+// static files (images, css, js)
+app.use(express.static(__dirname));
 
 // test route
 app.get('/', (req, res) => {
