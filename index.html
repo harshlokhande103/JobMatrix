@@ -755,11 +755,10 @@
         }
         .why-card img {
             width: 100%;
-            height: auto;                /* show full image height */
-            object-fit: contain;         /* ensure whole image is visible (no cropping) */
+            height: 220px;              /* fixed visible height so mobile images don't shrink too small */
+            object-fit: cover;          /* fill the card area (keeps image prominent like desktop) */
             display: block;
-            background: #f8f8f8;         /* subtle backdrop if image aspect differs */
-            padding: 10px;               /* optional spacing so edges aren't cut off visually */
+            border-bottom: 1px solid var(--border-light);
         }
         .why-card .card-body {
             padding: 16px;
@@ -782,7 +781,8 @@
         }
         @media (max-width: 600px) {
             .why-grid { grid-template-columns: 1fr; }
-            .why-card img { height: 160px; }
+            /* keep same visible height on small screens; increase if you want larger thumbnails */
+            .why-card img { height: 220px; }
         }
 
         @media (max-width: 768px) {
