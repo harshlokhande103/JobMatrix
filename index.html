@@ -220,13 +220,15 @@
 
         .hero h2 {
             font-size: 3rem;
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.6rem;    /* increased gap between title and tagline */
+            line-height: 1.05;
             color: var(--text-main);
         }
 
         .hero .tagline {
             font-size: 1.3rem;
-            margin-bottom: 0.7rem;
+            margin-top: 0.3rem;       /* more space from title */
+            margin-bottom: 0.6rem;    /* more space below tagline */
             color: var(--red-main);
             font-weight: 600;
         }
@@ -800,9 +802,9 @@
         <section class="hero">
             <video class="hero-bg" src="/62216-502889164.mp4" autoplay muted loop playsinline></video>
             <div class="hero-content">
-                <h2>JobMatrix</h2>
-                <p class="tagline">Trusted Jobs Only</p>
-                <p>
+                <h2 style="color: white;">JobMatrix</h2>
+                <p class="tagline" style="color: white; font-style: italic;">Trusted Jobs Only</p>
+                <p style="color: white;">
                     we are dedicated to connecting talent with opportunities across India. We offer a wide range of work-from-home and work-from-office jobs at no cost. Additionally, we provide structured interview and career training through experienced industry professionals to help candidates become job ready.
                 </p>
                 <a href="#" class="cta-button" onclick="showPage('contact')">
