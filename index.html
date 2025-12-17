@@ -313,8 +313,8 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 220px;
-            height: 220px;
+            width: 350px;
+            height: 350px;
             border-radius: 50%;
             background: radial-gradient(circle at 40% 35%, #ff7a8a, #ff3d5a);
             border: 3px solid #e5e5e5;
@@ -398,8 +398,8 @@
 
         .services-ring {
             position: relative;
-            width: 600px; /* Adjusted for 8 items */
-            height: 600px; /* Adjusted for 8 items */
+            width: 700px; /* Adjusted for 8 items */
+            height: 700px; /* Adjusted for 8 items */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -414,12 +414,12 @@
             top: 50%;
             --angle: 0deg;
             --radius: 38%;
-            transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-280px) rotate(calc(-1 * var(--angle))); /* Adjusted translateY */
+            transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-340px) rotate(calc(-1 * var(--angle))); /* Adjusted translateY */
             width: 300px;
             z-index: 1;
         }
         /* Center image sizing inside ring */
-        .services-ring .ring-center .center-image { width: 95%; aspect-ratio: 1 / 1; height: auto; display: block; object-fit: cover; border-radius: 50%; }
+        .services-ring .ring-center .center-image { width: 100%; aspect-ratio: 1 / 1; height: auto; display: block; object-fit: contain; border-radius: 50%; }
 
         .service-card {
             background: var(--bg-white);
