@@ -913,18 +913,9 @@
                         <img src="img1.webp" alt="Center image" class="center-image" />
                     </div>
 
-                    <!-- <div class="ring-item" style="--angle:0deg;">
-                        <div class="service-pill">
-                            <div class="pill-icon">🏛️</div>
-                            <div class="pill-text">
-                                <h4>Industrial Permissions</h4>
-                                <p>(Licenses / permissions / compliances)</p>
-                            </div>
-                        </div>
-                    </div> -->
-
+                    <!-- updated ring items with data attributes for popup -->
                     <div class="ring-item" style="--angle:45deg;">
-                        <div class="service-pill">
+                        <div class="service-pill" data-service="Resume (CV)" data-desc="ATS-friendly, recruiter-ready resumes. We optimise format, keywords and achievements to increase interview calls.">
                             <div class="pill-icon">📃</div>
                             <div class="pill-text">
                                 <h4>Resume(CV)</h4>
@@ -934,7 +925,7 @@
                     </div>
 
                     <div class="ring-item" style="--angle:90deg;">
-                        <div class="service-pill">
+                        <div class="service-pill" data-service="Refund Guarantee" data-desc="Clear refund policy for eligible courses — peace of mind if expectations aren’t met. Terms & conditions apply.">
                             <div class="pill-icon">💰</div>
                             <div class="pill-text">
                                 <h4>Refund Guarantee</h4>
@@ -944,7 +935,7 @@
                     </div>
 
                     <div class="ring-item" style="--angle:135deg;">
-                        <div class="service-pill">
+                        <div class="service-pill" data-service="100% Placement Course" data-desc="Comprehensive placement-focused training with interview prep, real projects, and placement assistance until you get selected.">
                             <div class="pill-icon">📚</div>
                             <div class="pill-text">
                                 <h4>100% Placement Course</h4>
@@ -953,18 +944,8 @@
                         </div>
                     </div>
 
-                    <!-- <div class="ring-item" style="--angle:180deg;">
-                        <div class="service-pill">
-                            <div class="pill-icon">💰</div>
-                            <div class="pill-text">
-                                <h4>Startup</h4>
-                                <p>(DIPP/Pitch Deck/ Funding)</p>
-                            </div>
-                        </div>
-                    </div> -->
-
                     <div class="ring-item" style="--angle:225deg;">
-                        <div class="service-pill">
+                        <div class="service-pill" data-service="Mock Interview Preparation" data-desc="Live mock interviews with industry experts, constructive feedback and a personalised improvement plan.">
                             <div class="pill-icon">👨‍🏫</div>
                             <div class="pill-text">
                                 <h4>Mock Interview Preparation</h4>
@@ -974,7 +955,7 @@
                     </div>
 
                     <div class="ring-item" style="--angle:270deg;">
-                        <div class="service-pill">
+                        <div class="service-pill" data-service="Training Course" data-desc="Job-focused learning paths with practical assignments and mentorship to bridge skill gaps and build real experience.">
                             <div class="pill-icon">📖</div>
                             <div class="pill-text">
                                 <h4>Trainig Course</h4>
@@ -984,7 +965,7 @@
                     </div>
 
                     <div class="ring-item" style="--angle:315deg;">
-                        <div class="service-pill">
+                        <div class="service-pill" data-service="Certificate" data-desc="Recognised course completion certificate to showcase your skills to employers and strengthen your profile.">
                             <div class="pill-icon">📄</div>
                             <div class="pill-text">
                                 <h4>Certificate</h4>
@@ -1124,6 +1105,19 @@
         <p>Empowering Careers | Connecting Talent</p>
     </footer>
 
+    <!-- new: Service details popup (reuses popup styles) -->
+    <div class="popup-overlay" id="servicePopup" aria-hidden="true">
+        <div class="popup-content">
+            <button class="close-popup" id="servicePopupClose" aria-label="Close">&times;</button>
+            <h2 id="servicePopupTitle">Service Title</h2>
+            <p id="servicePopupDesc" style="margin-top:0.6rem;color:var(--text-muted);"></p>
+            <div style="margin-top:1.2rem;display:flex;gap:8px;justify-content:center;">
+                <button class="submit-btn" id="serviceContactBtn" style="max-width:220px;">Contact Us</button>
+                <button class="submit-btn" id="serviceRegisterBtn" style="background:var(--bg-white);color:var(--text-main);border:1px solid var(--border-light);max-width:220px;">Register</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById("navMenu");
@@ -1238,6 +1232,57 @@
                     );
                 });
         }
+
+        // Service popup logic
+        (function () {
+            const servicePopup = document.getElementById('servicePopup');
+            const titleEl = document.getElementById('servicePopupTitle');
+            const descEl = document.getElementById('servicePopupDesc');
+            const closeBtn = document.getElementById('servicePopupClose');
+            const contactBtn = document.getElementById('serviceContactBtn');
+            const registerBtn = document.getElementById('serviceRegisterBtn');
+
+            // open popup with given data
+            function openServicePopup(title, desc) {
+                titleEl.textContent = title;
+                descEl.textContent = desc;
+                servicePopup.classList.add('active');
+                servicePopup.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeServicePopup() {
+                servicePopup.classList.remove('active');
+                servicePopup.setAttribute('aria-hidden', 'true');
+            }
+
+            // attach click handlers to each pill
+            document.querySelectorAll('.service-pill').forEach(pill => {
+                pill.style.cursor = 'pointer';
+                pill.addEventListener('click', () => {
+                    const title = pill.dataset.service || pill.querySelector('h4')?.innerText || 'Service';
+                    const desc = pill.dataset.desc || pill.querySelector('p')?.innerText || '';
+                    openServicePopup(title, desc);
+                });
+            });
+
+            // close handlers
+            closeBtn.addEventListener('click', closeServicePopup);
+            servicePopup.addEventListener('click', (e) => {
+                if (e.target === servicePopup) closeServicePopup();
+            });
+
+            // Contact button -> open contact page/section
+            contactBtn.addEventListener('click', () => {
+                closeServicePopup();
+                showPage('contact');
+            });
+
+            // Register button -> open welcome popup / registration
+            registerBtn.addEventListener('click', () => {
+                closeServicePopup();
+                openPopup();
+            });
+        })();
 
         document
             .getElementById("welcomePopup")
