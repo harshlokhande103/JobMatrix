@@ -720,9 +720,101 @@
             }
         }
     @media (max-width: 992px) {
-        .services-ring { aspect-ratio: auto; }
-        .services-ring .ring-center { position: static; transform: none; margin: 0 auto 1rem; width: 200px; height: 200px; }
-        .services-ring .ring-item { position: static; transform: none; width: 100%; margin-bottom: 0.9rem; }
+        /* switch ring to vertical stacked layout on tablets and below */
+        .services-ring {
+            position: static;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 20px 12px;
+            margin: 30px auto;
+        }
+
+        /* center image above stacked items */
+        .services-ring .ring-center {
+            position: static;
+            transform: none;
+            margin: 0 auto 0.8rem;
+            width: 180px;
+            height: 180px;
+        }
+
+        /* make each ring-item a full-width card */
+        .services-ring .ring-item {
+            position: static;
+            transform: none;
+            width: 100%;
+            max-width: 720px;
+            margin: 0.5rem 0;
+            left: auto;
+            top: auto;
+            z-index: 1;
+            display: block;
+        }
+
+        /* pills become full-width cards and readable on small screens */
+        .service-pill {
+            width: 100%;
+            padding: 1rem 1rem 1rem 4.5rem; /* leave space for icon */
+            box-sizing: border-box;
+        }
+
+        /* move icon inside the left area for stacked layout */
+        .service-pill .pill-icon {
+            position: absolute;
+            left: 16px;
+            right: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+        }
+
+        /* side stacks should be single column */
+        .side-stack .service-pill,
+        .services-split { 
+            width: 100%;
+        }
+
+        /* ensure center/title sizes adjust */
+        .services-ring .ring-center .center-image {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+        }
+
+        /* small adjustments for text sizes */
+        .pill-text h4 { font-size: 1.02rem; }
+        .pill-text p { font-size: 0.9rem; }
+    }
+
+    /* smaller phones */
+    @media (max-width: 480px) {
+        .services-ring {
+            padding: 16px 10px;
+        }
+
+        .services-ring .ring-center {
+            width: 140px;
+            height: 140px;
+            margin-bottom: 0.6rem;
+        }
+
+        .service-pill {
+            padding-left: 62px; /* keep icon visible on very small screens */
+            padding-right: 12px;
+        }
+
+        .service-pill .pill-icon {
+            left: 12px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .services-ring .ring-item { max-width: 100%; padding: 0 6px; }
     }
     </style>
 </head>
