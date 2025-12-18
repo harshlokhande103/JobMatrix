@@ -1055,7 +1055,7 @@
             <ul id="navMenu">
                 <li><a href="#" onclick="showPage('home'); closeMenu()">Home</a></li>
                 <li><a href="#" onclick="showPage('services'); closeMenu()">Services</a></li>
-                <li><a href="#" onclick="showPage('about'); closeMenu()">About Us</a></li>
+                <li><a href="about.html" onclick="closeMenu(); return true;">About Us</a></li>
                 <li><a href="contact.html" onclick="closeMenu(); return true;">Contact Us</a></li>
                  <li>
                      <button class="register-btn" onclick="openPopup(); closeMenu()">
@@ -1308,70 +1308,6 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
             </div>
         </section>
 
-        <!-- About Us -->
-        <div id="aboutPage" class="page">
-            <section class="about-section">
-                <div class="container">
-                    <div class="about-content">
-                        <h2>About JobMatrix</h2>
-                        <p>
-                            Welcome to JobMatrix - where technology meets talent. We are
-                            revolutionizing the job consulting industry by combining
-                            data-driven insights with personalized career guidance.
-                        </p>
-
-                        <p>
-                            Founded with a vision to decode the complex job market, JobMatrix
-                            has become the trusted bridge between ambitious professionals and
-                            leading organizations. Our sophisticated matching system ensures
-                            that every placement is a perfect fit, not just a job.
-                        </p>
-
-                        <div class="stats">
-                            <div class="stat-box">
-                                <h4>10K+</h4>
-                                <p>Placements</p>
-                            </div>
-                            <div class="stat-box">
-                                <h4>500+</h4>
-                                <p>Companies</p>
-                            </div>
-                            <div class="stat-box">
-                                <h4>95%</h4>
-                                <p>Success Rate</p>
-                            </div>
-                        </div>
-
-                        <h3>Our Mission</h3>
-                        <p>
-                            To empower every professional with the tools, connections, and
-                            confidence needed to navigate their career path successfully, while
-                            helping companies discover exceptional talent that drives
-                            innovation.
-                        </p>
-
-                        <h3>Why JobMatrix?</h3>
-                        <p>
-                            ✓ AI-powered job matching system<br />
-                            ✓ Industry expert career counselors<br />
-                            ✓ Free initial consultation<br />
-                            ✓ 100% confidential process<br />
-                            ✓ Lifetime career support<br />
-                            ✓ Exclusive job opportunities
-                        </p>
-
-                        <h3>Our Approach</h3>
-                        <p>
-                            We don't just find jobs - we build careers. Our holistic approach
-                            combines market insights, skill assessment, and personalized
-                            coaching to ensure you not only get hired but thrive in your new
-                            role.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
         <!-- Contact Us -->
         <div id="contactPage" class="page">
             <section class="contact-section">
@@ -1620,6 +1556,17 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                 .addEventListener("click", function (e) {
                     if (e.target === this) closePopup();
                 });
-        </script>
+
+            // If page opened with #register, open the welcome popup (allows Register button from other pages to work)
+            function openPopupFromHash() {
+                if ((location.hash || '').replace('#','') === 'register') {
+                    openPopup();
+                    // remove hash without reloading
+                    if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+                }
+            }
+            // run on load
+            window.addEventListener('load', openPopupFromHash);
+         </script>
 </body>
 </html>
