@@ -1056,13 +1056,13 @@
                 <li><a href="#" onclick="showPage('home'); closeMenu()">Home</a></li>
                 <li><a href="#" onclick="showPage('services'); closeMenu()">Services</a></li>
                 <li><a href="#" onclick="showPage('about'); closeMenu()">About Us</a></li>
-                <li><a href="#" onclick="showPage('contact'); closeMenu()">Contact Us</a></li>
-                <li>
-                    <button class="register-btn" onclick="openPopup(); closeMenu()">
-                        Register Now
-                    </button>
-                </li>
-            </ul>
+                <li><a href="contact.html" onclick="closeMenu(); return true;">Contact Us</a></li>
+                 <li>
+                     <button class="register-btn" onclick="openPopup(); closeMenu()">
+                         Register Now
+                     </button>
+                 </li>
+             </ul>
         </div>
     </nav>
 
@@ -1110,7 +1110,7 @@
                 <p style="color: white;">
                     we are dedicated to connecting talent with opportunities across India. We offer a wide range of work-from-home and work-from-office jobs at no cost. Additionally, we provide structured interview and career training through experienced industry professionals to help candidates become job ready.
                 </p>
-                <a href="#" class="cta-button" onclick="showPage('contact')">
+                <a href="contact.html" class="cta-button" onclick="return true;">
                     Start Your Journey
                 </a>
             </div>
@@ -1604,7 +1604,8 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                 // Contact button -> open contact page/section
                 contactBtn.addEventListener('click', () => {
                     closeServicePopup();
-                    showPage('contact');
+                    // navigate to dedicated contact page
+                    window.location.href = 'contact.html';
                 });
 
                 // Register button -> open welcome popup / registration
