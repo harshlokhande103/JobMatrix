@@ -940,6 +940,93 @@
 
         .services-ring .ring-item { max-width: 100%; padding: 0 6px; }
     }
+
+    /* Add Who Can Apply styles (place near other section styles) */
+    .who-section {
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+        }
+        .who-section .container { max-width: 1200px; margin: 0 auto; }
+        .who-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+        .who-intro {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: stretch; /* ensure both columns stretch to same height */
+        }
+        .who-list {
+            /* use the image as the box background, darken with overlay and use white text */
+            background-image: url("who can apply.png"); /* change path if needed */
+            background-size: cover;
+            /* shift the image slightly down so faces are visible (adjust px if you want more/less) */
+            background-position: center calc(50% + 24px);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            position: relative;
+            overflow: hidden;
+            display: flex;           /* make left box a flex column so it fills height */
+            flex-direction: column;
+        }
+       /* dark overlay to ensure text contrast */
+       .who-list::before {
+           content: "";
+           position: absolute;
+           inset: 0;
+           background: rgba(0,0,0,0.45);
+           z-index: 1;
+           border-radius: inherit;
+       }
+       /* ensure children render above overlay */
+       .who-list > * { position: relative; z-index: 2; background: transparent; }
+       /* make details column also fill same height */
+       .who-details { display: flex; flex-direction: column; }
+        .who-list ul {
+            list-style: disc;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 0 0 0 18px;
+            margin: 0;
+            flex: 1;                 /* allow list to expand and push background to full height */
+            align-content: start;
+        }
+        .who-list li {
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #ffffff;
+            display:flex;
+            align-items:center;
+            gap:8px;
+            /* subtle translucent item background for readability */
+            background: rgba(255,255,255,0.06);
+        }
+
+        @media (max-width: 900px) {
+            .who-grid { grid-template-columns: 1fr; }
+            .who-list ul { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .who-list ul { grid-template-columns: 1fr; }
+            /* on small screens move background a bit less to avoid too much crop */
+            .who-list { background-position: center calc(50% + 12px); }
+        }
     </style>
 </head>
 <body>
@@ -1186,6 +1273,37 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                             <p>We provide personalized one-on-one guidance to understand each candidate’s strengths, goals, and challenges. This tailored support helps us recommend suitable training and job opportunities, ensuring clarity and confidence throughout the career journey.</p>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Can Apply -->
+        <section class="who-section" id="who-can-apply" aria-labelledby="who-title">
+            <div class="container">
+                <h2 id="who-title" class="who-title"> Who Can Apply</h2>
+                <p class="who-intro">Is Job Matrix right for you? Train with experts, prepare with confidence, and explore real job opportunities that match your skills and career goals.</p>
+
+                <div class="who-grid">
+                    <div class="who-list" aria-hidden="false">
+                        <ul>
+                            <li>Students (18+)</li>
+                            <li>Freshers</li>
+                            <li>Experienced professionals</li>
+                            <li>Work From Home job seekers</li>
+                            <li>BPO / Non-Technical roles</li>
+                            <li>Career switch candidates</li>
+                        </ul>
+                    </div>
+
+                    <div class="who-details" aria-hidden="false">
+                        <h4>Who we help</h4>
+                        <br>
+                        <p><strong>Students (18+)</strong> looking for career-oriented training and practical exposure to get industry-ready.</p>
+                        <p><strong>Freshers</strong> preparing to crack interviews and start their careers with confidence.</p>
+                        <p><strong>Job Seekers</strong> searching for both work-from-home and office-based opportunities.</p>
+                        <p><strong>Career Switchers</strong> who want to upgrade skills and move into new roles with guided training and placement assistance.</p>
+                        <p><strong>Internship Candidates</strong> seeking skill-based, career-focused internships (subject to availability).</p>
+                    </div>
                 </div>
             </div>
         </section>
