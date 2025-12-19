@@ -273,23 +273,21 @@
         .section-title {
             text-align: center;
             font-size: 2.3rem;
-            margin-bottom: 3rem;
+            margin-bottom: 0.6rem; /* reduced gap to bring subtitle closer */
             color: var(--text-main);
             position: relative;
         }
 
         .section-title::after {
             content: "";
-            display: block;
+            display: none;
+        }
+        /* visible underline placed via DOM so we can put text between title and line */
+        .section-underline {
             width: 90px;
             height: 3px;
-            background: linear-gradient(
-                90deg,
-                var(--red-main),
-                transparent,
-                var(--red-main)
-            );
-            margin: 0.8rem auto 0;
+            background: linear-gradient(90deg, var(--red-main), transparent, var(--red-main));
+            margin: 6px auto 0; /* slightly closer to subtitle */
         }
 
         .services-grid {
@@ -1152,6 +1150,11 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
         <section class="services">
             <div class="container">
                 <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle" style="text-align:center;margin-top:3px;margin-bottom:10px;color:var(--text-muted);font-size:1.05rem;">
+                    Training that transforms careers by building real skills, confidence, and job-ready professionals.
+                </p>
+               <!-- underline placed after subtitle so text appears between title and line -->
+               <div class="section-underline" aria-hidden="true"></div>
                 <div class="services-ring">
                     <div class="ring-center">
                         <img src="images/img1.webp" alt="Center image" class="center-image" />
