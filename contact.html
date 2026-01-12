@@ -4,9 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact — JobMatrix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    :root{--red:#e73535;--bg:#fafafa;--border:#e5e5e5;--text:#111}
-    body{font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);margin:0}
+    :root{--red:#e73535;--bg:#fafafa;--border:#e5e5e5;--text:#111;--font-brand:Segoe UI,Arial,sans-serif;--font-body:'PT Serif',serif}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--text);margin:0}
     nav {
         background: var(--bg-white, #ffffff);
         border-bottom: 1px solid #e5e5e5;
@@ -49,6 +52,7 @@
     }
 
     .logo-title h1 {
+        font-family: var(--font-brand);
         color: #000000;
         font-size: 1.2rem;
         font-weight: 700;
@@ -56,6 +60,7 @@
     }
 
     .logo-subtitle {
+        font-family: var(--font-brand);
         font-size: 0.72rem;
         color: var(--text-light, #777);
         font-weight: 600;
@@ -133,7 +138,7 @@
       nav ul a { width: 100%; display: block; padding: .8rem .9rem; border-radius: 10px; background: var(--bg-soft, #fafafa); text-align: center; }
       .register-btn { width: 100%; padding: 11px; }
     }
-    body{font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);margin:0}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--text);margin:0}
     main{max-width:900px;margin:110px auto 40px;padding:0 20px}
     .card{background:#fff;border:1px solid var(--border);padding:24px;border-radius:12px;box-shadow:0 12px 30px rgba(231,53,53,0.06)}
     .form-group{margin-bottom:14px}

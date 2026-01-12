@@ -4,10 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About — JobMatrix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     /* Minimal styles: reuse nav look from index.html and simple content layout */
-    :root{--red:#e73535;--border:#e5e5e5;--bg:#fafafa;--text:#111}
-    body{font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);margin:0;line-height:1.6}
+    :root{--red:#e73535;--border:#e5e5e5;--bg:#fafafa;--text:#111;--font-brand:Segoe UI,Arial,sans-serif;--font-body:'PT Serif',serif}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--text);margin:0;line-height:1.6}
     nav {
         background: var(--bg-white, #ffffff);
         border-bottom: 1px solid #e5e5e5;
@@ -50,6 +53,7 @@
     }
 
     .logo-title h1 {
+        font-family: var(--font-brand);
         color: #000000;
         font-size: 1.2rem;
         font-weight: 700;
@@ -57,6 +61,7 @@
     }
 
     .logo-subtitle {
+        font-family: var(--font-brand);
         font-size: 0.72rem;
         color: var(--text-light, #777);
         font-weight: 600;
