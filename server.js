@@ -1,6 +1,7 @@
 // server.js
 
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
@@ -13,12 +14,26 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// static files (images, css, js)
-app.use(express.static(__dirname));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
-// test route
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/about.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'about.html'));
+});
+
+app.get('/contact.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'contact.html'));
+});
+
+app.get('/Untitled video - Made with Clipchamp.mp4', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Untitled video - Made with Clipchamp.mp4'));
 });
 
 // POST /api/register  -> popup form se data aayega

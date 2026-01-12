@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JobMatrix</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ff7a8a'/%3E%3Cstop offset='100%25' stop-color='%23ff3d5a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='26' font-weight='700' fill='%23ffffff'%3EJM%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ff7a8a'/%3E%3Cstop offset='100%25' stop-color='%23ff3d5a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='26' font-weight='700' fill='%23ffffff'%3EJM%3C/text%3E%3C/svg%3E" />
     <style>
         * {
             margin: 0;
@@ -164,9 +166,11 @@
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(6px, 6px);
         }
+
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
+
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(6px, -6px);
         }
@@ -190,7 +194,7 @@
             right: 0;
             bottom: 0;
             height: 160px;
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--bg-soft) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--bg-soft) 100%);
             z-index: 0;
         }
 
@@ -220,15 +224,18 @@
 
         .hero h2 {
             font-size: 4rem;
-            margin-bottom: 0.6rem;    /* increased gap between title and tagline */
+            margin-bottom: 0.6rem;
+            /* increased gap between title and tagline */
             line-height: 1.05;
             color: var(--text-main);
         }
 
         .hero .tagline {
             font-size: 1.8rem;
-            margin-top: 0.3rem;       /* more space from title */
-            margin-bottom: 0.6rem;    /* more space below tagline */
+            margin-top: 0.3rem;
+            /* more space from title */
+            margin-bottom: 0.6rem;
+            /* more space below tagline */
             color: var(--red-main);
             font-weight: 600;
         }
@@ -273,7 +280,8 @@
         .section-title {
             text-align: center;
             font-size: 2.3rem;
-            margin-bottom: 0.6rem; /* reduced gap to bring subtitle closer */
+            margin-bottom: 0.6rem;
+            /* reduced gap to bring subtitle closer */
             color: var(--text-main);
             position: relative;
         }
@@ -282,12 +290,14 @@
             content: "";
             display: none;
         }
+
         /* visible underline placed via DOM so we can put text between title and line */
         .section-underline {
             width: 90px;
             height: 3px;
             background: linear-gradient(90deg, var(--red-main), transparent, var(--red-main));
-            margin: 6px auto 0; /* slightly closer to subtitle */
+            margin: 6px auto 0;
+            /* slightly closer to subtitle */
         }
 
         .services-grid {
@@ -318,7 +328,7 @@
             border: 3px solid #e5e5e5;
             display: grid;
             place-items: center;
-            box-shadow: 0 12px 32px rgba(231,53,53,0.18);
+            box-shadow: 0 12px 32px rgba(231, 53, 53, 0.18);
             z-index: 0;
             overflow: hidden;
         }
@@ -328,7 +338,8 @@
             border: 1px solid var(--border-light);
             border-radius: 14px;
             box-shadow: 0 10px 26px rgba(231, 53, 53, 0.12);
-            padding: 0.9rem 3.2rem 0.9rem 1rem; /* Adjusted padding-right */
+            padding: 0.9rem 3.2rem 0.9rem 1rem;
+            /* Adjusted padding-right */
             position: relative;
             overflow: visible;
         }
@@ -337,12 +348,13 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            right: -22px; /* Position on the right border */
+            right: -22px;
+            /* Position on the right border */
             width: 44px;
             height: 44px;
             border-radius: 999px;
             background: radial-gradient(circle at 35% 35%, #ff7a8a, #ff3d5a);
-            box-shadow: 0 10px 24px rgba(231,53,53,0.28);
+            box-shadow: 0 10px 24px rgba(231, 53, 53, 0.28);
             display: grid;
             place-items: center;
             font-size: 18px;
@@ -360,16 +372,28 @@
             color: var(--text-light);
         }
 
-        .side-stack { display: grid; gap: 1.2rem; }
+        .side-stack {
+            display: grid;
+            gap: 1.2rem;
+        }
 
 
 
         /* Make side boxes wider like the reference */
-        .side-stack .service-pill { width: 420px; }
-        .side-stack .service-pill.small { width: 400px; }
+        .side-stack .service-pill {
+            width: 420px;
+        }
+
+        .side-stack .service-pill.small {
+            width: 400px;
+        }
 
         /* Icon bubble positioned outside toward center circle */
-        .service-pill { position: relative; overflow: visible; }
+        .service-pill {
+            position: relative;
+            overflow: visible;
+        }
+
         .service-pill .pill-icon {
             position: absolute;
             top: 50%;
@@ -378,26 +402,38 @@
             height: 44px;
             border-radius: 999px;
             background: radial-gradient(circle at 35% 35%, #ff7a8a, #ff3d5a);
-            box-shadow: 0 10px 24px rgba(231,53,53,0.28);
+            box-shadow: 0 10px 24px rgba(231, 53, 53, 0.28);
             display: grid;
             place-items: center;
             font-size: 18px;
         }
 
         /* Left column: bubble on right edge */
-        .services-split > .side-stack:first-child .service-pill { padding-right: 3.2rem; }
-        .services-split > .side-stack:first-child .service-pill .pill-icon { right: -22px; }
+        .services-split>.side-stack:first-child .service-pill {
+            padding-right: 3.2rem;
+        }
+
+        .services-split>.side-stack:first-child .service-pill .pill-icon {
+            right: -22px;
+        }
 
         /* Right column: bubble on left edge */
-        .services-split > .side-stack:last-child .service-pill { padding-left: 3.2rem; }
-        .services-split > .side-stack:last-child .service-pill .pill-icon { left: -22px; }
+        .services-split>.side-stack:last-child .service-pill {
+            padding-left: 3.2rem;
+        }
+
+        .services-split>.side-stack:last-child .service-pill .pill-icon {
+            left: -22px;
+        }
 
 
 
         .services-ring {
             position: relative;
-            width: 700px; /* Adjusted for 8 items */
-            height: 700px; /* Adjusted for 8 items */
+            width: 700px;
+            /* Adjusted for 8 items */
+            height: 700px;
+            /* Adjusted for 8 items */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -412,12 +448,21 @@
             top: 50%;
             --angle: 0deg;
             --radius: 38%;
-            transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-340px) rotate(calc(-1 * var(--angle))); /* Adjusted translateY */
+            transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-340px) rotate(calc(-1 * var(--angle)));
+            /* Adjusted translateY */
             width: 300px;
             z-index: 1;
         }
+
         /* Center image sizing inside ring */
-        .services-ring .ring-center .center-image { width: 100%; aspect-ratio: 1 / 1; height: auto; display: block; object-fit: contain; border-radius: 50%; }
+        .services-ring .ring-center .center-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            border-radius: 50%;
+        }
 
         .service-card {
             background: var(--bg-white);
@@ -654,6 +699,7 @@
         .page {
             display: none;
         }
+
         .page.active {
             display: block;
         }
@@ -663,6 +709,7 @@
             padding: 40px 20px;
             background: transparent;
         }
+
         .highlight-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -671,40 +718,47 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .highlight-image {
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
         }
+
         .highlight-image img {
             width: 100%;
             height: auto;
             display: block;
             object-fit: cover;
         }
+
         .highlight-card {
             background: var(--bg-white);
             border-radius: 16px;
             padding: 28px;
             border: 1px solid var(--border-light);
-            box-shadow: 0 18px 40px rgba(231,53,53,0.08);
+            box-shadow: 0 18px 40px rgba(231, 53, 53, 0.08);
         }
+
         .highlight-card h3 {
             margin: 0 0 8px;
             font-size: 1.35rem;
             color: var(--text-main);
         }
+
         .highlight-card p.lead {
             margin: 0 0 12px;
             color: var(--text-muted);
             font-size: 0.99rem;
         }
+
         .highlight-card p.small {
             margin: 0 0 18px;
             color: var(--text-light);
             font-size: 0.92rem;
             line-height: 1.5;
         }
+
         .know-more-btn {
             display: inline-block;
             padding: 10px 18px;
@@ -714,14 +768,23 @@
             border: none;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 8px 22px rgba(91,94,234,0.18);
+            box-shadow: 0 8px 22px rgba(91, 94, 234, 0.18);
             text-transform: uppercase;
         }
-        .know-more-btn:hover { background: #4a49d6; }
+
+        .know-more-btn:hover {
+            background: #4a49d6;
+        }
 
         @media (max-width: 992px) {
-            .highlight-container { grid-template-columns: 1fr; gap: 16px; }
-            .highlight-card { padding: 18px; }
+            .highlight-container {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .highlight-card {
+                padding: 18px;
+            }
         }
 
         /* Why Choose Us */
@@ -729,19 +792,26 @@
             padding: 70px 20px;
             background: #fff;
         }
-        .why-section .container { max-width: 1200px; margin: 0 auto; }
+
+        .why-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .why-title {
             text-align: center;
             font-size: 2rem;
             margin-bottom: 1.6rem;
             color: var(--text-main);
         }
+
         .why-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             align-items: stretch;
         }
+
         .why-card {
             background: var(--bg-white);
             border: 1px solid var(--border-light);
@@ -749,30 +819,38 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 10px 26px rgba(231,53,53,0.06);
+            box-shadow: 0 10px 26px rgba(231, 53, 53, 0.06);
         }
+
         .why-card img {
             width: 100%;
-            height: 220px;              /* fixed visible height so mobile images don't shrink too small */
-            object-fit: cover;          /* fill the card area (keeps image prominent like desktop) */
+            height: 220px;
+            /* fixed visible height so mobile images don't shrink too small */
+            object-fit: cover;
+            /* fill the card area (keeps image prominent like desktop) */
             object-position: center;
             display: block;
-            background: var(--bg-white); /* ensure any transparent areas use white (no dark bands) */
+            background: var(--bg-white);
+            /* ensure any transparent areas use white (no dark bands) */
             border-bottom: 1px solid var(--border-light);
-            border-top-left-radius: 12px; /* match card rounding so edges don't reveal background */
+            border-top-left-radius: 12px;
+            /* match card rounding so edges don't reveal background */
             border-top-right-radius: 12px;
             /* ensure the image's rounded corners are visible and no dark gap appears */
             overflow: hidden;
         }
+
         .why-card .card-body {
             padding: 16px;
             flex: 1;
         }
+
         .why-card h4 {
             margin: 0 0 8px;
             font-size: 1.05rem;
             color: var(--text-main);
         }
+
         .why-card p {
             margin: 0;
             color: var(--text-muted);
@@ -781,12 +859,20 @@
         }
 
         @media (max-width: 992px) {
-            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (max-width: 600px) {
-            .why-grid { grid-template-columns: 1fr; }
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
             /* keep same visible height on small screens; increase if you want larger thumbnails */
-            .why-card img { height: 220px; }
+            .why-card img {
+                height: 220px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -847,116 +933,134 @@
                 padding: 2.1rem 1.7rem;
             }
         }
-    @media (max-width: 992px) {
-        /* switch ring to vertical stacked layout on tablets and below */
-        .services-ring {
-            position: static;
-            width: 100%;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            padding: 20px 12px;
-            margin: 30px auto;
+
+        @media (max-width: 992px) {
+
+            /* switch ring to vertical stacked layout on tablets and below */
+            .services-ring {
+                position: static;
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                padding: 20px 12px;
+                margin: 30px auto;
+            }
+
+            /* center image above stacked items */
+            .services-ring .ring-center {
+                position: static;
+                transform: none;
+                margin: 0 auto 0.8rem;
+                width: 180px;
+                height: 180px;
+            }
+
+            /* make each ring-item a full-width card */
+            .services-ring .ring-item {
+                position: static;
+                transform: none;
+                width: 100%;
+                max-width: 720px;
+                margin: 0.5rem 0;
+                left: auto;
+                top: auto;
+                z-index: 1;
+                display: block;
+            }
+
+            /* pills become full-width cards and readable on small screens */
+            .service-pill {
+                width: 100%;
+                padding: 1rem 1rem 1rem 4.5rem;
+                /* leave space for icon */
+                box-sizing: border-box;
+            }
+
+            /* move icon inside the left area for stacked layout */
+            .service-pill .pill-icon {
+                position: absolute;
+                left: 16px;
+                right: auto;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 44px;
+                height: 44px;
+            }
+
+            /* side stacks should be single column */
+            .side-stack .service-pill,
+            .services-split {
+                width: 100%;
+            }
+
+            /* ensure center/title sizes adjust */
+            .services-ring .ring-center .center-image {
+                width: 100%;
+                max-width: 180px;
+                height: auto;
+            }
+
+            /* small adjustments for text sizes */
+            .pill-text h4 {
+                font-size: 1.02rem;
+            }
+
+            .pill-text p {
+                font-size: 0.9rem;
+            }
         }
 
-        /* center image above stacked items */
-        .services-ring .ring-center {
-            position: static;
-            transform: none;
-            margin: 0 auto 0.8rem;
-            width: 180px;
-            height: 180px;
+        /* smaller phones */
+        @media (max-width: 480px) {
+            .services-ring {
+                padding: 16px 10px;
+            }
+
+            .services-ring .ring-center {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 0.6rem;
+            }
+
+            .service-pill {
+                padding-left: 62px;
+                /* keep icon visible on very small screens */
+                padding-right: 12px;
+            }
+
+            .service-pill .pill-icon {
+                left: 12px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .services-ring .ring-item {
+                max-width: 100%;
+                padding: 0 6px;
+            }
         }
 
-        /* make each ring-item a full-width card */
-        .services-ring .ring-item {
-            position: static;
-            transform: none;
-            width: 100%;
-            max-width: 720px;
-            margin: 0.5rem 0;
-            left: auto;
-            top: auto;
-            z-index: 1;
-            display: block;
-        }
-
-        /* pills become full-width cards and readable on small screens */
-        .service-pill {
-            width: 100%;
-            padding: 1rem 1rem 1rem 4.5rem; /* leave space for icon */
-            box-sizing: border-box;
-        }
-
-        /* move icon inside the left area for stacked layout */
-        .service-pill .pill-icon {
-            position: absolute;
-            left: 16px;
-            right: auto;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 44px;
-            height: 44px;
-        }
-
-        /* side stacks should be single column */
-        .side-stack .service-pill,
-        .services-split { 
-            width: 100%;
-        }
-
-        /* ensure center/title sizes adjust */
-        .services-ring .ring-center .center-image {
-            width: 100%;
-            max-width: 180px;
-            height: auto;
-        }
-
-        /* small adjustments for text sizes */
-        .pill-text h4 { font-size: 1.02rem; }
-        .pill-text p { font-size: 0.9rem; }
-    }
-
-    /* smaller phones */
-    @media (max-width: 480px) {
-        .services-ring {
-            padding: 16px 10px;
-        }
-
-        .services-ring .ring-center {
-            width: 140px;
-            height: 140px;
-            margin-bottom: 0.6rem;
-        }
-
-        .service-pill {
-            padding-left: 62px; /* keep icon visible on very small screens */
-            padding-right: 12px;
-        }
-
-        .service-pill .pill-icon {
-            left: 12px;
-            width: 40px;
-            height: 40px;
-        }
-
-        .services-ring .ring-item { max-width: 100%; padding: 0 6px; }
-    }
-
-    /* Add Who Can Apply styles (place near other section styles) */
-    .who-section {
+        /* Add Who Can Apply styles (place near other section styles) */
+        .who-section {
             padding: 60px 20px;
             background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
         }
-        .who-section .container { max-width: 1200px; margin: 0 auto; }
+
+        .who-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .who-title {
             text-align: center;
             font-size: 2rem;
             color: var(--text-main);
             margin-bottom: 12px;
         }
+
         .who-intro {
             text-align: center;
             color: var(--text-muted);
@@ -965,41 +1069,57 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .who-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            align-items: stretch; /* ensure both columns stretch to same height */
+            align-items: stretch;
+            /* ensure both columns stretch to same height */
         }
+
         .who-list {
             /* use the image as the box background, darken with overlay and use white text */
-            background-image: url("images/who can apply.png"); /* change path if needed */
+            background-image: url("images/who can apply.png");
+            /* change path if needed */
             background-size: cover;
             /* shift the image slightly down so faces are visible (adjust px if you want more/less) */
             background-position: center calc(50% + 24px);
             color: #ffffff;
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 12px;
             padding: 18px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
             position: relative;
             overflow: hidden;
-            display: flex;           /* make left box a flex column so it fills height */
+            display: flex;
+            /* make left box a flex column so it fills height */
             flex-direction: column;
         }
-       /* dark overlay to ensure text contrast */
-       .who-list::before {
-           content: "";
-           position: absolute;
-           inset: 0;
-           background: rgba(0,0,0,0.45);
-           z-index: 1;
-           border-radius: inherit;
-       }
-       /* ensure children render above overlay */
-       .who-list > * { position: relative; z-index: 2; background: transparent; }
-       /* make details column also fill same height */
-       .who-details { display: flex; flex-direction: column; }
+
+        /* dark overlay to ensure text contrast */
+        .who-list::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1;
+            border-radius: inherit;
+        }
+
+        /* ensure children render above overlay */
+        .who-list>* {
+            position: relative;
+            z-index: 2;
+            background: transparent;
+        }
+
+        /* make details column also fill same height */
+        .who-details {
+            display: flex;
+            flex-direction: column;
+        }
+
         .who-list ul {
             list-style: disc;
             display: grid;
@@ -1007,32 +1127,46 @@
             grid-template-columns: repeat(2, minmax(0, 1fr));
             padding: 0 0 0 18px;
             margin: 0;
-            flex: 1;                 /* allow list to expand and push background to full height */
+            flex: 1;
+            /* allow list to expand and push background to full height */
             align-content: start;
         }
+
         .who-list li {
             padding: 8px 10px;
             border-radius: 8px;
             font-weight: 600;
             color: #ffffff;
-            display:flex;
-            align-items:center;
-            gap:8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             /* subtle translucent item background for readability */
-            background: rgba(255,255,255,0.06);
+            background: rgba(255, 255, 255, 0.06);
         }
 
         @media (max-width: 900px) {
-            .who-grid { grid-template-columns: 1fr; }
-            .who-list ul { grid-template-columns: 1fr 1fr; }
+            .who-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .who-list ul {
+                grid-template-columns: 1fr 1fr;
+            }
         }
+
         @media (max-width: 480px) {
-            .who-list ul { grid-template-columns: 1fr; }
+            .who-list ul {
+                grid-template-columns: 1fr;
+            }
+
             /* on small screens move background a bit less to avoid too much crop */
-            .who-list { background-position: center calc(50% + 12px); }
+            .who-list {
+                background-position: center calc(50% + 12px);
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -1058,15 +1192,15 @@
             </div>
             <ul id="navMenu">
                 <li><a href="#" onclick="showPage('home'); closeMenu()">Home</a></li>
-                <li><a href="#" onclick="showPage('services'); closeMenu()">Services</a></li>
+                <li><a href="#services" onclick="closeMenu(); return true;">Services</a></li>
                 <li><a href="about.html" onclick="closeMenu(); return true;">About Us</a></li>
                 <li><a href="contact.html" onclick="closeMenu(); return true;">Contact Us</a></li>
-                 <li>
-                     <button class="register-btn" onclick="openPopup(); closeMenu()">
-                         Register Now
-                     </button>
-                 </li>
-             </ul>
+                <li>
+                    <button class="register-btn" onclick="openPopup(); closeMenu()">
+                        Register Now
+                    </button>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -1083,21 +1217,11 @@
                 </div>
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="your@email.com"
-                    />
+                    <input type="email" name="email" required placeholder="your@email.com" />
                 </div>
                 <div class="form-group">
                     <label>Phone Number</label>
-                    <input
-                        type="tel"
-                        name="phone"
-                        required
-                        placeholder="+91 98765 43210"
-                    />
+                    <input type="tel" name="phone" required placeholder="+91 98765 43210" />
                 </div>
                 <button type="submit" class="submit-btn">Register Now</button>
             </form>
@@ -1107,12 +1231,15 @@
     <!-- Home Page -->
     <div id="homePage" class="page active">
         <section class="hero">
-            <video class="hero-bg" src="/Untitled video - Made with Clipchamp.mp4" autoplay muted loop playsinline></video>
+            <video class="hero-bg" src="Untitled video - Made with Clipchamp.mp4" autoplay muted loop
+                playsinline></video>
             <div class="hero-content">
                 <h2 style="color: white;">JobMatrix</h2>
                 <p class="tagline" style="color: white; font-style: italic;">Trusted Jobs Only</p>
                 <p style="color: white;">
-                    we are dedicated to connecting talent with opportunities across India. We offer a wide range of work-from-home and work-from-office jobs at no cost. Additionally, we provide structured interview and career training through experienced industry professionals to help candidates become job ready.
+                    we are dedicated to connecting talent with opportunities across India. We offer a wide range of
+                    work-from-home and work-from-office jobs at no cost. Additionally, we provide structured interview
+                    and career training through experienced industry professionals to help candidates become job ready.
                 </p>
                 <a href="contact.html" class="cta-button" onclick="return true;">
                     Start Your Journey
@@ -1135,32 +1262,45 @@
 
                 <div class="highlight-card">
                     <h3>Welcome to Job Matrix – Where Training Meets Real Opportunities</h3>
-                    <p class="lead">Job Matrix is a Career-Focused consulting platform dedicated to bridging the gap between talent and employment across India. Recognizing that many candidates struggle due to a lack of Direction rather than a lack of skill, we provide the essential Training and Expert Guidance needed to succeed in a competitive market.
+                    <p class="lead">Job Matrix is a Career-Focused consulting platform dedicated to bridging the gap
+                        between talent and employment across India. Recognizing that many candidates struggle due to a
+                        lack of Direction rather than a lack of skill, we provide the essential Training and Expert
+                        Guidance needed to succeed in a competitive market.
 
 
-Our platform offers structured, Expert-Led online sessions designed to enhance Interview Skills, Communication, and Workplace Readiness. By aligning our training with current hiring standards, we ensure candidates are thoroughly prepared for Professional challenges.
+                        Our platform offers structured, Expert-Led online sessions designed to enhance Interview Skills,
+                        Communication, and Workplace Readiness. By aligning our training with current hiring standards,
+                        we ensure candidates are thoroughly prepared for Professional challenges.
 
-<br>
-<br>
+                        <br>
+                        <br>
 
-Beyond training, Job Matrix provides access to diverse Work-From-Home and office-based Job Opportunities across various sectors. Candidates who complete our programs receive Dedicated Placement Assistance, with a specialized focus on Remote Roles. At Job Matrix, we don’t just help you find a job; we Empower you to earn it. Start your Journey with us today and take a Confident Step toward a Successful Future.</p>
+                        Beyond training, Job Matrix provides access to diverse Work-From-Home and office-based Job
+                        Opportunities across various sectors. Candidates who complete our programs receive Dedicated
+                        Placement Assistance, with a specialized focus on Remote Roles. At Job Matrix, we don’t just
+                        help you find a job; we Empower you to earn it. Start your Journey with us today and take a
+                        Confident Step toward a Successful Future.
+                    </p>
                     <!-- <p class="small">Job Matrix is a career-focused job consulting platform dedicated to preparing candidates for genuine employment opportunities across India. We believe that the right training, combined with expert guidance, plays a crucial role in building successful careers in today’s competitive job market.</p> -->
                     <div style="display:flex;gap:12px;align-items:center;">
-                        <button class="know-more-btn" onclick="showPage('services'); window.scrollTo({top: document.querySelector('.services').offsetTop - 60, behavior:'smooth'})">Know More</button>
+                        <button class="know-more-btn"
+                            onclick="showPage('services'); window.scrollTo({top: document.querySelector('.services').offsetTop - 60, behavior:'smooth'})">Know
+                            More</button>
                         <button class="submit-btn" onclick="openPopup()" style="max-width:160px;">Register</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="services">
+        <section class="services" id="services">
             <div class="container">
                 <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle" style="text-align:center;margin-top:3px;margin-bottom:10px;color:var(--text-muted);font-size:1.05rem;">
+                <p class="section-subtitle"
+                    style="text-align:center;margin-top:3px;margin-bottom:10px;color:var(--text-muted);font-size:1.05rem;">
                     Training that transforms careers by building real skills, confidence, and job-ready professionals.
                 </p>
-               <!-- underline placed after subtitle so text appears between title and line -->
-               <div class="section-underline" aria-hidden="true"></div>
+                <!-- underline placed after subtitle so text appears between title and line -->
+                <div class="section-underline" aria-hidden="true"></div>
                 <div class="services-ring">
                     <div class="ring-center">
                         <img src="images/img1.webp" alt="Center image" class="center-image" />
@@ -1168,17 +1308,20 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
 
                     <!-- updated ring items with data attributes for popup -->
                     <div class="ring-item" style="--angle:45deg;">
-                        <div class="service-pill" data-service="Resume (CV)" data-desc="End-to-end placement support including job matching, interview scheduling, and guidance.">
+                        <div class="service-pill" data-service="Resume (CV)"
+                            data-desc="End-to-end placement support including job matching, interview scheduling, and guidance.">
                             <div class="pill-icon">📃</div>
                             <div class="pill-text">
                                 <h4>Placement Assistance</h4>
-                                <p>End-to-end placement support including job matching, interview scheduling, and guidance.</p>
+                                <p>End-to-end placement support including job matching, interview scheduling, and
+                                    guidance.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="ring-item" style="--angle:90deg;">
-                        <div class="service-pill" data-service="Career Skill Development" data-desc="Skill development training focused on workplace communication and job readiness.">
+                        <div class="service-pill" data-service="Career Skill Development"
+                            data-desc="Skill development training focused on workplace communication and job readiness.">
                             <div class="pill-icon">💰</div>
                             <div class="pill-text">
                                 <h4>Career Skill Development</h4>
@@ -1188,48 +1331,56 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                     </div>
 
                     <div class="ring-item" style="--angle:135deg;">
-                        <div class="service-pill" data-service="100% Placement Course" data-desc="Personalized one-on-one career guidance to help candidates choose the right career path.">
+                        <div class="service-pill" data-service="100% Placement Course"
+                            data-desc="Personalized one-on-one career guidance to help candidates choose the right career path.">
                             <div class="pill-icon">📚</div>
                             <div class="pill-text">
                                 <h4>Career Guidance & Counseling</h4>
-                                <p>Personalized one-on-one career guidance to help candidates choose the right career path.</p>
+                                <p>Personalized one-on-one career guidance to help candidates choose the right career
+                                    path.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="ring-item" style="--angle:225deg;">
-                        <div class="service-pill" data-service="Mock Interview Preparation" data-desc="Real-time mock interviews with practical feedback to identify gaps and boost confidence.">
+                        <div class="service-pill" data-service="Mock Interview Preparation"
+                            data-desc="Real-time mock interviews with practical feedback to identify gaps and boost confidence.">
                             <div class="pill-icon">👨‍🏫</div>
                             <div class="pill-text">
                                 <h4> Mock Interview Sessions</h4>
-                                <p>Real-time mock interviews with practical feedback to identify gaps and boost confidence.</p>
+                                <p>Real-time mock interviews with practical feedback to identify gaps and boost
+                                    confidence.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="ring-item" style="--angle:270deg;">
-                        <div class="service-pill" data-service="Training Course" data-desc="Structured interview training to improve communication skills, confidence, and interview performance.">
+                        <div class="service-pill" data-service="Training Course"
+                            data-desc="Structured interview training to improve communication skills, confidence, and interview performance.">
                             <div class="pill-icon">📖</div>
                             <div class="pill-text">
                                 <h4>Interview Preparation Training</h4>
-                                <p>Structured interview training to improve communication skills, confidence, and interview performance.</p>
+                                <p>Structured interview training to improve communication skills, confidence, and
+                                    interview performance.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="ring-item" style="--angle:315deg;">
-                        <div class="service-pill" data-service="Certificate" data-desc="Professional resume creation based on industry standards to improve interview shortlisting.">
+                        <div class="service-pill" data-service="Certificate"
+                            data-desc="Professional resume creation based on industry standards to improve interview shortlisting.">
                             <div class="pill-icon">📄</div>
                             <div class="pill-text">
                                 <h4>Resume & CV Building</h4>
-                                <p>Professional resume creation based on industry standards to improve interview shortlisting.</p>
+                                <p>Professional resume creation based on industry standards to improve interview
+                                    shortlisting.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section> <!-- end of Services section -->
-        
+
         <!-- Why Choose Us (inserted) -->
         <section class="why-section" aria-labelledby="why-title">
             <div class="container">
@@ -1239,7 +1390,11 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                         <img src="images/Industry-Oriented Training Programs.png" alt="Industry-Oriented Training">
                         <div class="card-body">
                             <h4>Industry-Oriented Training Programs</h4>
-                            <p>At Job Matrix, our training programs are designed to align with current industry requirements. We focus on practical interview preparation, communication skills, and job readiness rather than theory alone. This structured approach helps candidates understand real hiring expectations and prepare with confidence for interviews and professional environments.</p>
+                            <p>At Job Matrix, our training programs are designed to align with current industry
+                                requirements. We focus on practical interview preparation, communication skills, and job
+                                readiness rather than theory alone. This structured approach helps candidates understand
+                                real hiring expectations and prepare with confidence for interviews and professional
+                                environments.</p>
                         </div>
                     </article>
 
@@ -1247,7 +1402,10 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                         <img src="images/Verified & Reliable Job Opportunities.jpg" alt="Verified Opportunities">
                         <div class="card-body">
                             <h4>Verified & Reliable Job Opportunities</h4>
-                            <p>We share only verified and genuine job opportunities to ensure reliability and trust. Each opportunity is carefully reviewed to avoid misleading or fake offers. Our goal is to connect candidates with relevant roles that match their skills, preferences, and long-term career goals.</p>
+                            <p>We share only verified and genuine job opportunities to ensure reliability and trust.
+                                Each opportunity is carefully reviewed to avoid misleading or fake offers. Our goal is
+                                to connect candidates with relevant roles that match their skills, preferences, and
+                                long-term career goals.</p>
                         </div>
                     </article>
 
@@ -1255,7 +1413,10 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                         <img src="images/PAN India Career Opportunities.png" alt="PAN India Opportunities">
                         <div class="card-body">
                             <h4>PAN India Career Opportunities</h4>
-                            <p>Job Matrix provides access to job opportunities across PAN India, including both work-from-home and work-from-office roles. This wide reach allows candidates from different locations to explore multiple career options without geographical limitations.</p>
+                            <p>Job Matrix provides access to job opportunities across PAN India, including both
+                                work-from-home and work-from-office roles. This wide reach allows candidates from
+                                different locations to explore multiple career options without geographical limitations.
+                            </p>
                         </div>
                     </article>
 
@@ -1263,7 +1424,10 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                         <img src="images/Transparent.jpg" alt="Transparent Process">
                         <div class="card-body">
                             <h4>Transparent & Ethical Work Process</h4>
-                            <p>We follow a transparent and professional process at every stage of our services. Clear communication, defined procedures, and honest guidance ensure candidates understand what to expect. We believe transparency builds trust and helps candidates make informed career decisions.</p>
+                            <p>We follow a transparent and professional process at every stage of our services. Clear
+                                communication, defined procedures, and honest guidance ensure candidates understand what
+                                to expect. We believe transparency builds trust and helps candidates make informed
+                                career decisions.</p>
                         </div>
                     </article>
 
@@ -1271,7 +1435,9 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                         <img src="images/Honest Career Support (No False Commitments).png" alt="Honest Support">
                         <div class="card-body">
                             <h4>Honest Career Support (No False Commitments)</h4>
-                            <p>Job Matrix believes in honesty over unrealistic promises. We do not offer fake job guarantees. Instead, we focus on training, guidance, and placement assistance, while final selection depends on candidate performance and employer requirements.</p>
+                            <p>Job Matrix believes in honesty over unrealistic promises. We do not offer fake job
+                                guarantees. Instead, we focus on training, guidance, and placement assistance, while
+                                final selection depends on candidate performance and employer requirements.</p>
                         </div>
                     </article>
 
@@ -1279,7 +1445,9 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                         <img src="images/Personalized Career Guidance & Support.jpg" alt="Personalized Guidance">
                         <div class="card-body">
                             <h4>Personalized Career Guidance & Support</h4>
-                            <p>We provide personalized one-on-one guidance to understand each candidate’s strengths, goals, and challenges. This tailored support helps us recommend suitable training and job opportunities, ensuring clarity and confidence throughout the career journey.</p>
+                            <p>We provide personalized one-on-one guidance to understand each candidate’s strengths,
+                                goals, and challenges. This tailored support helps us recommend suitable training and
+                                job opportunities, ensuring clarity and confidence throughout the career journey.</p>
                         </div>
                     </article>
                 </div>
@@ -1290,7 +1458,8 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
         <section class="who-section" id="who-can-apply" aria-labelledby="who-title">
             <div class="container">
                 <h2 id="who-title" class="who-title"> Who Can Apply</h2>
-                <p class="who-intro">Is Job Matrix right for you? Train with experts, prepare with confidence, and explore real job opportunities that match your skills and career goals.</p>
+                <p class="who-intro">Is Job Matrix right for you? Train with experts, prepare with confidence, and
+                    explore real job opportunities that match your skills and career goals.</p>
 
                 <div class="who-grid">
                     <div class="who-list" aria-hidden="false">
@@ -1307,15 +1476,94 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                     <div class="who-details" aria-hidden="false">
                         <h4>Who we help</h4>
                         <br>
-                        <p><strong>Students (18+)</strong> looking for career-oriented training and practical exposure to get industry-ready.</p>
-                        <p><strong>Freshers</strong> preparing to crack interviews and start their careers with confidence.</p>
-                        <p><strong>Job Seekers</strong> searching for both work-from-home and office-based opportunities.</p>
-                        <p><strong>Career Switchers</strong> who want to upgrade skills and move into new roles with guided training and placement assistance.</p>
-                        <p><strong>Internship Candidates</strong> seeking skill-based, career-focused internships (subject to availability).</p>
+                        <p><strong>Students (18+)</strong> looking for career-oriented training and practical exposure
+                            to get industry-ready.</p>
+                            <br>
+                        <p><strong>Freshers</strong> preparing to crack interviews and start their careers with
+                            confidence.</p>
+                            <br>
+                        <p><strong>Job Seekers</strong> searching for both work-from-home and office-based
+                            opportunities.</p>
+                            <br>
+                        <p><strong>Career Switchers</strong> who want to upgrade skills and move into new roles with
+                            guided training and placement assistance.</p>
+                            <br>
+                        <p><strong>Internship Candidates</strong> seeking skill-based, career-focused internships
+                            (subject to availability).</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section style="padding:60px 20px; display:flex; justify-content:center;">
+  <div style="
+    position:relative;
+    max-width:900px;
+    width:100%;
+    padding:40px 30px;
+    background:#fff;
+    text-align:center;
+  ">
+
+    <!-- SVG BORDER WITH TOP-LEFT + TOP-RIGHT + BOTTOM-LEFT ANGLES -->
+    <svg
+      viewBox="0 0 1000 260"
+      preserveAspectRatio="none"
+      style="
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        pointer-events:none;
+      "
+    >
+      <path
+        d="
+          M40 0
+          H930
+          L1000 70
+          V240
+          H70
+          L0 200
+          V40
+          L40 0
+          Z
+        "
+        fill="none"
+        stroke="#9fd0ea"
+        stroke-width="4"
+      />
+    </svg>
+
+    <h2 style="
+      font-size:2.4rem;
+      font-weight:800;
+      margin-bottom:14px;
+      color:#000;
+      position:relative;
+      z-index:1;
+    ">
+      Our Purpose:
+    </h2>
+
+    <p style="
+      font-size:1.05rem;
+      color:#333;
+      line-height:1.6;
+      max-width:720px;
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+    ">
+      JobMatrix was started with a simple aim to guide job seekers honestly and help them prepare for real opportunities.
+
+    </p>
+
+  </div>
+</section>
+
+
+
 
         <!-- Contact Us -->
         <div id="contactPage" class="page">
@@ -1326,39 +1574,20 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                         <form id="contactForm" onsubmit="handleContactSubmit(event)">
                             <div class="form-group">
                                 <label>Full Name *</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    required
-                                    placeholder="Enter your name"
-                                />
+                                <input type="text" name="name" required placeholder="Enter your name" />
                             </div>
                             <div class="form-group">
                                 <label>Email Address *</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    required
-                                    placeholder="your@email.com"
-                                />
+                                <input type="email" name="email" required placeholder="your@email.com" />
                             </div>
                             <div class="form-group">
                                 <label>Phone Number *</label>
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    required
-                                    placeholder="+91 98765 43210"
-                                />
+                                <input type="tel" name="phone" required placeholder="+91 98765 43210" />
                             </div>
                             <div class="form-group">
                                 <label>Message *</label>
-                                <textarea
-                                    name="message"
-                                    rows="5"
-                                    required
-                                    placeholder="Tell us about your career goals and how we can help..."
-                                ></textarea>
+                                <textarea name="message" rows="5" required
+                                    placeholder="Tell us about your career goals and how we can help..."></textarea>
                             </div>
                             <button type="submit" class="submit-btn">Send Message</button>
                         </form>
@@ -1388,7 +1617,8 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
                 <p id="servicePopupDesc" style="margin-top:0.6rem;color:var(--text-muted);"></p>
                 <div style="margin-top:1.2rem;display:flex;gap:8px;justify-content:center;">
                     <button class="submit-btn" id="serviceContactBtn" style="max-width:220px;">Contact Us</button>
-                    <button class="submit-btn" id="serviceRegisterBtn" style="background:var(--bg-white);color:var(--text-main);border:1px solid var(--border-light);max-width:220px;">Register</button>
+                    <button class="submit-btn" id="serviceRegisterBtn"
+                        style="background:var(--bg-white);color:var(--text-main);border:1px solid var(--border-light);max-width:220px;">Register</button>
                 </div>
             </div>
         </div>
@@ -1568,7 +1798,7 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
 
             // If page opened with #register, open the welcome popup (allows Register button from other pages to work)
             function openPopupFromHash() {
-                if ((location.hash || '').replace('#','') === 'register') {
+                if ((location.hash || '').replace('#', '') === 'register') {
                     openPopup();
                     // remove hash without reloading
                     if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
@@ -1576,6 +1806,7 @@ Beyond training, Job Matrix provides access to diverse Work-From-Home and office
             }
             // run on load
             window.addEventListener('load', openPopupFromHash);
-         </script>
+        </script>
 </body>
+
 </html>
