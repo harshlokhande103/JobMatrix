@@ -755,8 +755,14 @@
             width: 100%;
             height: 220px;              /* fixed visible height so mobile images don't shrink too small */
             object-fit: cover;          /* fill the card area (keeps image prominent like desktop) */
+            object-position: center;
             display: block;
+            background: var(--bg-white); /* ensure any transparent areas use white (no dark bands) */
             border-bottom: 1px solid var(--border-light);
+            border-top-left-radius: 12px; /* match card rounding so edges don't reveal background */
+            border-top-right-radius: 12px;
+            /* ensure the image's rounded corners are visible and no dark gap appears */
+            overflow: hidden;
         }
         .why-card .card-body {
             padding: 16px;
