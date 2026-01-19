@@ -1275,6 +1275,78 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* CTA phone / booking section (tweaked to use same page fonts & weights) */
+        .cta-call .container { max-width: 980px; margin: 0 auto; text-align: center; }
+
+        /* keep the blue circle unchanged */
+        .cta-phone-circle {
+            width: 66px;
+            height: 66px;
+            border-radius: 50%;
+            background: #0a66ff;
+            display: inline-grid;
+            place-items: center;
+            color: #fff;
+            font-size: 22px;
+            margin: 0 auto 18px;
+            box-shadow: 0 10px 26px rgba(10,102,255,0.12);
+        }
+
+        /* Heading: keep same font-family as page body (PT Serif) and bold weight */
+        .cta-call h3 {
+            font-family: var(--font-body);   /* same serif used site-wide */
+            font-size: 1.45rem;
+            font-weight: 700;                /* keep boldness consistent */
+            margin: 12px 0 10px;
+            color: #111;
+        }
+
+        /* Paragraph uses the page body font as before */
+        .cta-call p {
+            font-family: var(--font-body);
+            color: #444;
+            font-size: 1.02rem;
+            line-height: 1.7;
+            max-width: 820px;
+            margin: 0 auto 26px;
+        }
+
+        /* Phone number: switch to the page body (serif) font and strong weight so it matches other bold text */
+        .cta-phone-number {
+            font-family: var(--font-body);   /* changed from brand to body to match page typography */
+            font-size: 64px;
+            font-weight: 700;                /* bold like headings */
+            color: #0f1724;
+            letter-spacing: 0.5px;           /* subtle spacing for elegance */
+            margin-top: 10px;
+        }
+
+        /* responsive tweaks unchanged */
+        @media (max-width: 992px) {
+            .cta-phone-number { font-size: 48px; }
+            .cta-call { padding: 60px 18px; }
+        }
+        @media (max-width: 480px) {
+            .cta-phone-circle {
+                width: 56px;
+                height: 56px;
+                font-size: 20px;
+            }
+
+            .cta-phone-number {
+                font-size: 34px;
+            }
+
+            .cta-call h3 {
+                font-size: 1.15rem;
+            }
+
+            .cta-call p {
+                font-size: 0.98rem;
+                padding: 0 8px;
+            }
+        }
     </style>
 </head>
 
@@ -1715,8 +1787,18 @@
             </div>
         </section>
 
+        <!-- CTA phone section (new) -->
+        <section class="cta-call" aria-labelledby="cta-phone-title">
+            <div class="container">
+                <div class="cta-phone-circle" aria-hidden="true">📞</div>
 
+                <h3 id="cta-phone-title">Call For the Enquiries / Book an Appointment</h3>
 
+                <p>If you are interested for higher education overseas or want guidance on career opportunities — meet us and get the right guidance.</p>
+
+                <div class="cta-phone-number" role="text" aria-label="Phone number">+91 76226 93 1234</div>
+            </div>
+        </section>
 
         <!-- Contact Us -->
         <div id="contactPage" class="page">
